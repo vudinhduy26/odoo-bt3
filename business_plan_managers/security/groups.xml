@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="business_plan" model="res.groups">
+        <field name="name">#Business plan groups</field>
+    </record>
+
+    <record model="ir.rule" id="business_plan_customer">
+        <field name="name">#Business customer</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups" eval="[(4,ref('business_plan_managers.business_plan'))]"></field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+</odoo>
